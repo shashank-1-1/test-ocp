@@ -1,0 +1,16 @@
+apiVersion: build.openshift.io/v1
+kind: BuildConfig
+metadata:
+  name: flask-app
+spec:
+  source:
+    type: Git
+    git:
+      uri: 'https://github.com/shashank-1-1/test-ocp.git'
+  strategy:
+    type: Docker
+  output:
+    to:
+      kind: ImageStreamTag
+      name: flask-app:latest
+

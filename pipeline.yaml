@@ -1,0 +1,13 @@
+apiVersion: tekton.dev/v1beta1
+kind: Pipeline
+metadata:
+  name: flask-app-pipeline
+spec:
+  tasks:
+    - name: build
+      taskRef:
+        name: build-docker
+    - name: deploy
+      taskRef:
+        name: deploy-to-openshift
+
